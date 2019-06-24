@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.site_intro{
+    margin-top: 235px;
+    margin-bottom: 35px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.city_search button{
+    background: #ddd;
+    cursor: pointer;
+}
+#country_input{
+    width: 77px;
+}
+
+#current_id{
+}
+.location_info{
+    border-style: solid;
+    border-width: 1px;
+    height: 150px;
+    width: 350px;
+    border-color: #cccccc;
+    padding: 25px;
+}
+.current_location{
+    text-align: left;
+    margin-bottom: 3px;
+    font-size: x-large;
+    font-weight: lighter;
+    color: #696969;
+}
+.location_time{
+    text-align: left;
+    margin-bottom: 3px;
+    font-size: medium;
+    font-weight: lighter;
+    color: #696969;
+}
+.weather_desc{
+    text-align: left;
+    margin-bottom: 3px;
+    font-size: medium;
+    font-weight: lighter;
+    color: #696969;
+}
+.current_icon{
+    float: left;
+    margin-top: 42px;
+}
+
+.current_temp{
+    font-size: 45px;
+    float: left;
+    margin-top: 35px;
+}
+.current_celsius{
+    float:left;
+    margin-top: 40px;
+}
+.current_temp_info{
+    float: right;
+    margin-top: 24px;
+}
+.current_wind{
+    font-weight: lighter;
+    color: #696969;
+    margin-top: 20px;
+}
+.current_humidity{
+    text-align: left;
+    font-weight: lighter;
+    color: #696969;
+}
+
+#table_id{
+    width: 600px;
+    border-spacing: 0;
+}
+
+.city_search button:hover{
+    background: #ccc;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/*This is the actual switch*/
+.slider.round {
+    border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: .4s;
+}
+
+/*This is the box within the switch that gets slided*/
+.slider.round:before{
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+/*This makes it so when switch is pressed, color changes*/
+input:checked + .slider {
+    background-color: #cccccc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(13px);
+}
+
+.display_area{
+    margin-top: 235px;
+}
+
+.weather_row{
+
+}
+
+.weather_row_date{
+    background-color: antiquewhite;
+    border-collapse: collapse;
+}
+
+.weather_cell_date{
+    border-top: 1px solid #dddddd;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 6px 6px 6px 8px;
+
+
+}
+.weather_cell_time{
+    border-top: 1px solid #ddd;
+    padding: 5px;
+}
+
+.weather_cell_img{
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.weather_cell_info{
+    border-top: 1px solid #ddd;
+    padding: 5px;
+}
+.weather_cell_temp{
+    display: inline-block;
+    min-width: 50px;
+    padding: 4px;
+    margin-right: 10px;
+    background-color: #999;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+.weather_cell_cloud{
+    font-size: 15px;
+}
+
+.weather_cell_wind_humidity{
+    font-size: 14px;
+}

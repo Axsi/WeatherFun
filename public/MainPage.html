@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--JQUERY LIBRARY-->
+    <!--    <script src="jquery-3.3.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+
+    <link href="Style/global.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="MainPage.js"></script>
+
+
+
+    <title>Show Me That Weather</title>
+</head>
+<body>
+
+<div class="site_intro" align="center">
+    Show me that Weather!
+</div>
+
+<div class="city_search" align="center">
+
+    <div>
+        <input  id="city_input"   type="text" placeholder="City..">
+        <input  id="country_input" type="text" placeholder="Country..">
+        <button id="city_submit" type="submit"><i class="fa fa-search"></i></button>
+
+        <span style= "font-size:12px">Current</span>
+
+        <label class = "switch">
+            <input id="check_box" type ="checkbox">
+            <span class="slider round"></span>
+        </label>
+
+        <span style= "font-size:12px">Hourly</span>
+
+    </div>
+
+
+</div>
+
+<div class="display_area" align="center">
+    <div id="current_id">
+    </div>
+    <table id="table_id" >
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
