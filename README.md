@@ -1,6 +1,7 @@
 # WeatherFun
 WeatherFun is a project that allows users to check weather information on a user inputted city
 
+## Screenshot
 ![alt text](public/assets/Screenshot%20(55).png)
 
 ## Built with
