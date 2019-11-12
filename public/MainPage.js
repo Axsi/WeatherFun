@@ -22,14 +22,14 @@ function submitCity() {
         console.log(city);
         console.log(country);
 
-
+        //set cityID of the city the user searched for, by finding user input in the history.city.list.json file aka city_list variable
         for(let i = 0; i < totalCities; i++){
             if((city_list[i]['city']['name'] === city) && (city_list[i]['city']['country'] === country)){
                 cityID = parseInt(city_list[i]['city']['id']['$numberLong']);
             }
         }
         console.log(cityID);
-
+        //checkbox checked, send query for hourly weather
         if($('#check_box').is(':checked')){
             $.ajax({
                 cache:false,
@@ -38,6 +38,7 @@ function submitCity() {
                 dataType: "text",
                 success: function(res){
                      //console.log("first ajax result for hourly: " + res);
+                    //res is the api key
                     $.ajax({
                         cache:false,
                         url:"https://api.openweathermap.org/data/2.5/forecast?id="+cityID+res,
@@ -50,7 +51,7 @@ function submitCity() {
                             var currentDate;
 
                             for(let i=0; i < resLength; i++){
-
+                                //dt is the time of data forecasted
                                 let weather = res['list'][i];
                                 let date = new Date((weather['dt']) * 1000);
 
@@ -74,7 +75,7 @@ function submitCity() {
                 }
             })
         }else{
-
+            //checkbox unchecked, send query for current weather
             $.ajax({
                 cache:false,
                 url: "/submitCity",
@@ -142,7 +143,7 @@ function submitCity() {
         }
     })
 }
-
+//setting up the history.city.list.json file into city_list variable
 function obtainJson(){
      $.getJSON('history.city.list.json',function(data){
         city_list = data;
@@ -154,7 +155,7 @@ function obtainJson(){
     });
 
 }
-
+//setup a new row in the table
 function setDateRow(weather){
 
     let day = new Date((weather['dt']) * 1000);
@@ -174,7 +175,7 @@ function setDateRow(weather){
     dateCell.textContent = getDay(day) + " " + getMonth(day) +
         " " + day.getDate() + " " + day.getFullYear();
 }
-
+//setup new cell in the row in the table
 function setWeatherCell(weather){
     console.log(typeof weather['weather']);
     let tableRef = document.getElementById('table_id');
@@ -231,7 +232,7 @@ function getWeatherIcon(desc){
 
     return iconList[desc];
 }
-
+//setup dom elements in front end
 function setupTags(tag,name, text){
     let doc = document.createElement(tag);
     doc.className = name;
